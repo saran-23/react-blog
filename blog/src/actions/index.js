@@ -1,9 +1,9 @@
 import jsonplaceholder from '../apis/jsonPlaceHoder';
 
-export const fetchPosts  =  () => async  dispath => {
+export const fetchPosts  =  () => async  dispatch => {
     const response =  await jsonplaceholder.get('/posts');
 
-    dispath({
+    dispatch({
         type:'FETCH_POSTS',
         payload:response.data,
     });
@@ -11,7 +11,7 @@ export const fetchPosts  =  () => async  dispath => {
 
 
 
-export const fetchUser = (id) => async dispatch => {
+export const fetchUser = id => async dispatch => {
     const response = await jsonplaceholder.get(`/users/${id}`);
 
     dispatch ({
