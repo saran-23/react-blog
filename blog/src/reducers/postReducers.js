@@ -1,7 +1,7 @@
 export default (state=[],action) => {
-        if(action.type === 'FETCH_POSTS') {
-            return action.payload;
-        }
+        switch (action.type) {  // if action.type = case 'fetch_posts
+            case 'FETCH_POSTS':
+                return action.payload;
 
-        return state;
+        }
 };
