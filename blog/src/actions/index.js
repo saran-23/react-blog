@@ -10,12 +10,12 @@ export const  fetchPosts  =  () => async  dispatch => {
     });
 };
 
-export const fetchUser = id => async dispatch => {
- _fetchUser();
+export const fetchUser = id =>  dispatch => {
+ _fetchUser(id,dispatch);     //(id,dispatch);   defines that what u need  
 };
 
 
-const  _fetchUser =  _.memoize( () =>{                             //private  function  _fetchuser
+const  _fetchUser =  _.memoize(async (id,dispatch) =>{                             //private  function  _fetchuser
     const response = await jsonplaceholder.get(`/users/${id}`);
 
     dispatch ({
