@@ -3,7 +3,9 @@ import jsonplaceholder from '../apis/jsonplaceholder';
 
 
 export const fetchPostsAndUsers = () => async  dispatch  => {
-    dispatch(fetchPosts());
+    console.log('About to fetch');   
+    await dispatch(fetchPosts());
+    console.log('fetch posts');
 }
 
 
