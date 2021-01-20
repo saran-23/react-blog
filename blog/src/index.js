@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider}from 'react-redux';
 import {createStore,applyMiddleware}from 'redux';
-import  thunk from 'redux-thunk';
+import  thunk from 'redux-thunk'; //  return function from action
 
 import App from './Components/App';
 import reducers  from './reducers';

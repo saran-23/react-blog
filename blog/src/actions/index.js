@@ -5,8 +5,14 @@ import  jsonplaceholder  from '../apis/jsonplaceholder';
 export const fetchPostsAndUsers = () => async  (dispatch ,getState )=> {
     await dispatch(fetchPosts());
 
-  const  userIds   =_.uniq(_.map(getState().posts,'userId'));
-    userIds.forEach(id => dispatch(fetchUser(id)));
+//   const  userIds   =_.uniq(_.map(getState().posts,'userId'));
+//     userIds.forEach(id => dispatch(fetchUser(id)));
+
+    _.chain(getState().posts)  //getscall
+    .map('userId')  //retrieve the values
+    .uniq()
+    .forEach(id => dispatch(fetchUser(id)))
+    .value();
 };
 
 
